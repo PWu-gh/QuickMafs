@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const http = require('http');
-const port = 8000;
+const port = process.env.PORT || 8000; // takes wathever port heroku gives
 
 const server = http.createServer(app).listen(port);
 const io = require('socket.io')(server);// create server and listen
@@ -19,8 +19,8 @@ app.get('/game', (req, res) => {
 
 console.log("Starting Quickmafs on port: " + port);
 
-
 //socket.io - online actions
+
 const MAX_PLAYER = 5;
 let game_status;
 let p_ready = [];
