@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickMafs</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body class="font_merri">
+<div class="container">
+    <div id="header" class="row align-items-center">
+        <img id="logo" src="/img/Logo.png" onclick="window.location.href='/'" alt="QuickMafs" style="cursor: pointer;">
+        <button type="button"  class="btn btn-success" id="btn_rd" onclick="ready()">ready</button>
+
+    </div>
+    <div class="container row padding-0" id="game_header" >
+        <div class="col-1 padding-0" id="time">
+            <img id="alarm" src="/img/alarm.png" alt="alarm">
+            <span id="timer">120</span>
+        </div>
+        <div class="col-1 separator" id="round">
+            <strong>
+                <div>Round</div>
+                <span id="n_round">x</span><span> / 5</span>
+            </strong>
+        </div>
+        <div class="col-2 separator">
+            <div id="p1">Player1</div>
+            <button id="c1" onclick="ask_op(1)">chrono</button>
+        </div>
+        <div class="col-2 separator">
+            <div id="p2">Player1</div>
+            <button id="c2" onclick="ask_op(2)">chrono</button>
+        </div>
+        <div class="col-2 separator">
+            <div id="p3">Player1</div>
+            <button id="c3" onclick="ask_op(3)">chrono</button>
+        </div>
+        <div class="col-2 separator">
+            <div id="p4">Player1</div>
+            <button id="c4" onclick="ask_op(4)">chrono</button>
+        </div>
+        <div class="col-2 separator">
+            <div id="p5">Player1</div>
+            <button id="c5" onclick="ask_op(5)">chrono</button>
+        </div>
+
+
+    </div>
+    <div class="container row padding-0" id="game">
+
+            <div class="col-sm-8 padding-0">
+                <div class="container " id="board">
+                    
+                    <div class="top-left">
+                        <h3 class="custom_font">Operations</h3><br>
+                        <div id="write_op"></div>
+                    </div>
+
+                    <div class="top-right">
+                        
+                        <h3 class="custom_font">
+                            <div>Find : <span id="find" style="color: aliceblue;"></span></div>
+                            <div>Numbers :</div>
+                            <ul style="color: aliceblue;">
+                                <div id="n_info">
+                                    <li id="s1"></li>
+                                    <li id="s2"></li>
+                                    <li id="s3"></li>
+                                    <li id="s4"></li>
+                                    <li id="s5"></li>
+                                </div> 
+                            </ul>
+                               
+                        </h3>
+
+                    </div>
+                    <div class="bot-left">
+                        <h3>Commands</h3>
+                        <table>
+                            <tr>
+                                <td>    <button id="n1" onclick="nb_button(1)">n1</button>     </td>
+                                <td>    <button id="n2" onclick="nb_button(2)">n2</button>     </td>
+                                <td>    <button id="n3" onclick="nb_button(3)">n3</button>     </td>
+                                <td>    <button id="n4" onclick="nb_button(4)">n4</button>     </td>
+                                <td>    <button id="n5" onclick="nb_button(5)">n5</button>     </td>
+                            </tr>
+                    
+                            <tr>
+                                <td>    <button onclick="op_button('+')">+</button>   </td>
+                                <td>    <button onclick="op_button('-')">-</button>  </td>
+                                <td>    <button onclick="op_button('*')">&times;</button>   </td>
+                                <td>    <button onclick="op_button('/')">/</button>   </td>
+                                <td>    <button onclick="cancel_bt()">cancel</button></td>
+                                <td>    <button onclick="g_reset()">reset</button></td>
+                            </tr>
+                        </table>
+                    
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 padding-0" id="chat">
+                <div class="container" id="chat_display">
+                    <h3 class="custom_font" style="color: black;">Chat</h3>
+                    <section id="display_chat">   
+                    </section>
+                </div>
+
+                <form action="/" method="post" id="send_msg" style="padding-left: 6px;">
+                    <input type="text" name="message" id="message" placeholder="Type your messages here" autocomplete="off" style="width:98%"/>
+                    <input type="submit" style="visibility: hidden;" />
+                </form>
+            
+                
+            </div>
+            
+    </div><!-- game container -->
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+      <div id="txt_cont">
+        <div>
+            <span class="close">&times;</span>
+            <h4 id="n_p">Name</h4>
+        </div><br>
+        <div id="modal_t">
+
+                Modal text
+                op_sign = btn;<br>
+                op_sign = btn;<br>
+                op_sign = btn; 
+        </div>
+        <div id="g_info">
+            <h3 id="find_s" style="color: rgb(158, 8, 8);">XX</h3>
+            <div id="nums" style="font-size: larger;">kkk</div>
+        </div>
+
+      </div>
+  </div>
+</div>  
+
+    <script src="/js/socket.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/interface.js"></script>
+    <script src="/js/modal.js"></script>
+</body> 
+
+</html>

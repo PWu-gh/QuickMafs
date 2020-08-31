@@ -1,0 +1,262 @@
+body {
+    background: url(/img/wood.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#logo {
+  width: 400px;
+  height: 100%;
+}
+
+.padding-0{
+  padding-right:0;
+  padding-left:0;
+}
+
+
+#board {
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    width: 100%;
+    height: 600px;
+    background-image: url("/img/board.jpg");
+}
+
+#header {/* top/bot right/left*/
+  padding: 1em; 
+}
+
+#game_header {
+  width: 100%;
+  height: 60px;
+  background-color: #F6DAB9;/*change here*/
+  margin-bottom: 5px;
+  border: 1px solid black ;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+.backg{
+  background-image: url("/img/wood1.jpg");
+}
+
+
+#game {
+  height: 600px;
+}
+
+
+#chat {
+  height: 100%;
+  background-image: url("/img/wood2.jpg");
+  border: 1px solid rgb(0, 0, 0) ;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#chat_display {
+  height: 93%;
+}
+
+
+#alarm {
+  height: 80px;
+  width: 100%;
+  padding-left: 5px;
+  margin-top: -20px;
+
+}
+
+#timer {
+  position: absolute;
+  top: 24%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: Impact, fantasy;
+  font-size: 20px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  color:rgb(240, 238, 238);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+/* bot right text */
+.bot-left { 
+  position: absolute;
+  bottom: 20px;
+  left: 30%;
+  color:rgb(240, 238, 238);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+/* top right text */
+.top-right { 
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color:rgb(240, 238, 238);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#display_chat {
+  overflow: scroll;
+  overflow-x:hidden;
+  overflow-y: hidden;
+  height: 91%;
+  word-wrap: break-word;
+
+}
+
+.stronger {
+  font-size: 120%;
+}
+
+.separator {
+  border-right: 1px solid rgb(0, 0, 0) ;
+  padding-left: 5px;
+}
+
+#round{
+  text-align: center;
+  padding-top: 5px;
+}
+
+@font-face {
+	font-family: "Shrikhand";
+	src: url('/font/Shrikhand/Shrikhand-Regular.ttf');
+}
+@font-face {
+	font-family: "Merriweather";
+	src: url('/font/Merriweather/Merriweather-Regular.ttf');
+}
+@font-face {
+	font-family: "Berkshire_Swash";
+	src: url('/font/Berkshire_Swash/BerkshireSwash-Regular.ttf');
+}
+
+#write_op {
+  font-family: "Shrikhand";
+  font-size: 150%;
+  margin-left: 50px;
+}
+
+.custom_font{
+  font-family: "Shrikhand";
+  color: antiquewhite;
+}
+
+
+.font_merri{
+  font-family: "Merriweather";
+}
+
+#p1,#p2,#p3,#p4,#p5 {
+  overflow: hidden;
+  max-width: 100%;
+}
+
+#btn_rd {
+  text-align: center;
+  margin: auto;
+  top: 50px;
+  height: 50px;
+  width: 140px;
+  font-size: larger;
+  color: antiquewhite;
+}
+
+/* Modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 200px; /* Location of the box */
+  left:0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  margin: auto;
+  right: 10%;
+  width: 80%;
+  height: 80%;
+  max-width: 600px;
+  max-height: 400px;
+  background-image: url('/img/parch_hori.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: rgba(0,0,0,0); 
+  font-family: "Shrikhand";
+}
+
+#txt_cont{
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  width: 80%;
+  height: 80%;
+}
+/* The Close Button */
+.close {
+  position: absolute;
+  right: 10px;
+  top: -10px;
+  color: #000000;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#g_info{
+  position: absolute;
+  right: 70px;
+  top: 5px;
+}
+
+#inside {
+  height: 600px;
+  width: 400px;
+  margin: auto;
+  background-image: url("/img/parchment_invis.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#in_par {
+  position: relative;
+  left: 15%;
+  top: 10%;
+  font-family: Berkshire_Swash;
+}
+
+#players_list{
+  overflow: scroll;
+  overflow-x:hidden;
+  overflow-y: hidden;
+  word-wrap: break-word;
+  height: 250px;
+  width: 80%;
+  font-size: 150%;
+}

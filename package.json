@@ -1,0 +1,11 @@
+{
+  "name": "quickmafs",
+  "version": "1.0.0",
+  "description": "quick maths app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pierre Wu",
+  "license": "ISC"
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickMafs</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+</head>
+<body>
+    <div> 
+        <div style="padding: 2em;" class="text-center">
+            <img src="/img/Logo.png" alt="QuickMafs">
+        </div>   
+    </div>
+    
+    <div id="inside">
+        <div id="in_par">
+            <h4>Players inside the room :</h4>
+            <div id="players_list">  
+                <ul> 
+                    <strong>        
+                    <% exist.forEach(e=> { %>
+                    <li><%= e %></li>
+                    <% }); %>
+                    </strong>  
+                </ul>
+            </div>
+            
+            <div id="login_style" style="font-size: larger;">
+                <!-- send form to /game route-->
+                <form action="/game" method="get" id="user_form" >
+                    <input type="text" name="name" id="name" placeholder="Username" autocomplete="off"  size="20"/>
+                    <input type="submit" value="Play"/>
+                </form>
+                <div id="repick" style="color:darkred"> </div>
+            </div>   
+        </div>
+        
+    </div>
+
+    <script src="/js/auth_fail.js"></script>
+</body>
+</html>
