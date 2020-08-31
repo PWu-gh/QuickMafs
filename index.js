@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const http = require('http');
-const port = process.env.PORT || 8000; // takes wathever port heroku gives
+const port = 8000;
 
 const server = http.createServer(app).listen(port);
 const io = require('socket.io')(server);// create server and listen
