@@ -7,5 +7,19 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Pierre Wu",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PWu-gh/QuickMafs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PWu-gh/QuickMafs/issues"
+  },
+  "homepage": "https://github.com/PWu-gh/QuickMafs#readme"
 }
