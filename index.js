@@ -50,7 +50,7 @@ io.on('connection', socket => {
   });
 
   socket.on('broad_msg', message => {
-    socket.broadcast.emit('chat-message', { message: message, name: users[socket.id] })
+    socket.broadcast.emit('chat-message', { message: message, name: users[socket.id] });
   });
 
   socket.on('disconnect', () => {
@@ -75,7 +75,7 @@ io.on('connection', socket => {
       round++;
       game_status = true;
       game_tab = roll();
-      find_nb = nb_find(10,10);
+      find_nb = nb_find(11,66);
       io.sockets.emit('start', {game_tab : game_tab, find_nb : find_nb, round : round})
       countd(120);
     }

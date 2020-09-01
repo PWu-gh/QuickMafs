@@ -14,8 +14,8 @@ socket.on('name_taken',  data => {
   window.location.replace("/?failed="+data);
 })
 
-socket.on('chat-message', name => {//data is an object {name, message}
-  appendMessage('<strong>'+name+ '</strong> : '+data.message);
+socket.on('chat-message', data => {//data is an object {name, message}
+  appendMessage('<strong>'+data.name+ '</strong> : '+data.message);
 })
 
 socket.on('user-connected', data => { 
