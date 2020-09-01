@@ -47,6 +47,14 @@ socket.on("start", data =>{// object {game_tab , find_nb}
   hideall(5); 
 })
 
+socket.on('ready_check', name => {
+  for(let i =1; i <= 5; i++){
+    if(name == document.getElementById('p'+i).innerHTML){
+      colorblue('p'+i);
+    }
+  }
+})
+
 socket.on('count', data =>{
   document.getElementById('timer').innerHTML = data;
 })
@@ -118,6 +126,10 @@ function update_player(data){
 function colorgreen(p){
   document.getElementById(p).style.backgroundColor = "palegreen";
 }
+function colorblue(p){
+  document.getElementById(p).style.backgroundColor = "deepskyblue";
+}
+
 
 //put the default style when doesnt work ??
 function reset_display(){

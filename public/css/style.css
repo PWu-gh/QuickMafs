@@ -195,12 +195,13 @@ body {
   width: 80%;
   height: 80%;
   max-width: 600px;
-  max-height: 400px;
+  max-height: 350px;
   background-image: url('/img/parch_hori.png');
   background-size: 100%;
   background-repeat: no-repeat;
   background-color: rgba(0,0,0,0); 
   font-family: "Shrikhand";
+  border: none;
 }
 
 #txt_cont{

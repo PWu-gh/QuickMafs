@@ -68,14 +68,16 @@ io.on('connection', socket => {
     }
   });
 
-  socket.on('ready', (name)=>{
-    p_ready.push(name);
+  socket.on('ready', ()=>{
+    p_ready.push(users[socket.id]);
     let nb_players = Object.values(users).length;
+    io.sockets.emit('ready_check', users[socket.id]);
     if(nb_players === p_ready.length){
       round++;
       game_status = true;
       game_tab = roll();
       find_nb = nb_find(11,66);
+      p_solved = [];
       io.sockets.emit('start', {game_tab : game_tab, find_nb : find_nb, round : round})
       countd(120);
     }
