@@ -39,24 +39,7 @@
         
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <script src="/js/auth_fail.js"></script>
-    <script>
-        function test(e){
-            console.log(e.code)
-            var input_t = document.getElementById('txt_user').innerHTML
-            console.log(input_t)
-            console.log(input_t.length)
-        }
-        
-        $('input[type="text"]').keydown(function(e){
-            //not include in  48-90 96-105    0-Z   numpad0-numpad 9 
-            if(!((e.keyCode >= 48 && e.keyCode <= 90) || (e.keyCode >= 96 && e.keyCode <= 105))){
-                e.preventDefault();
-            }
-
-        });
-    </script>
 
 </body>
 </html>

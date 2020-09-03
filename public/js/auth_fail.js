@@ -23,3 +23,11 @@ if(param != null){
 	document.getElementById('repick').innerHTML = " Please pick an available username !"
 }
 
+$('input[type="text"]').keydown(function(e){
+	//not include in  48-90 96-105    0-Z   numpad0-numpad 9 
+	if(!((e.keyCode >= 48 && e.keyCode <= 90) || (e.keyCode >= 96 && e.keyCode <= 105))){
+		e.preventDefault();
+		document.getElementById('repick').innerHTML = " Only alphanumeric char!"
+	}
+
+});
