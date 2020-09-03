@@ -15,6 +15,11 @@ function url_get(param) {
 }
 
 const param = url_get("failed");
+const param_reg = url_get("reg");
+if(param_reg != null){
+	document.getElementById('repick').innerHTML = " Please pick an username with only alphanumeric characters!"
+}
 if(param != null){
 	document.getElementById('repick').innerHTML = " Please pick an available username !"
 }
+

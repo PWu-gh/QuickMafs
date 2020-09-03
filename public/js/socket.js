@@ -6,11 +6,19 @@ const msgForm = document.getElementById('send_msg');
 
 const name = url_get("name");
 
+if(regtest(name) == false){
+  window.location.replace("/?reg=noreg");
+} 
+
+function regtest(str){
+  const regex = /^[0-9a-zA-Z]+$/;//alphanumeric
+  return regex.test(str)
+}
+
 // appendMessage('You joined the room');
 socket.emit('new-user', name);
 
-socket.on('name_taken',  data => {
-  console.log("lol")
+socket.on('name_taken',  data => { 
   window.location.replace("/?failed="+data);
 })
 
@@ -27,7 +35,9 @@ socket.on('user-connected', data => {
 })
 
 socket.on('user-disconnected', data => {
-  appendMessage('<strong> 🠜 &nbsp;'+data.name+ '</strong> left the room.');
+  if(data.name != undefined){
+    appendMessage('<strong> 🠜 &nbsp;'+data.name+ '</strong> left the room.');
+  }
   display_name(Object.values(data.users));
 }) 
 
@@ -75,7 +85,6 @@ socket.on('end', ()=> {
   show.forEach(e => {
     document.getElementById("c"+e).style.visibility = "visible";
   })
-  
 })
 
 msgForm.addEventListener('submit', e => {
