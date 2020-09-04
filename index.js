@@ -29,8 +29,9 @@ let round = 0;
 let game_tab = [];
 let find_nb;
 let users ={};
+let results = [];
 
-//Object.values(users) this is a tab
+//Object.values(users) this is a tab of all names
 //Object.keys(users).length
 
 io.on('connection', socket => {
@@ -64,9 +65,14 @@ io.on('connection', socket => {
     p_solved.push(data);
     io.sockets.emit('user-found', {name :users[socket.id], chrono : data.chrono});
     if(p_solved.length == Object.values(users).length){
-      endgame();
+      repeat = false;// countd
     }
   });
+
+  socket.on('unfound', data => {
+    p_solved.push(data);
+    console.log(p_solved);
+  })
 
   socket.on('ready', ()=>{
     p_ready.push(users[socket.id]);
@@ -76,7 +82,8 @@ io.on('connection', socket => {
       round++;
       game_status = true;
       game_tab = roll();
-      find_nb = nb_find(10,10);
+      find_nb = nb_find(10,70);
+      results.push(p_solved);
       p_solved = [];
       io.sockets.emit('start', {game_tab : game_tab, find_nb : find_nb, round : round})
       countd(120);
@@ -141,10 +148,13 @@ function countd(count){
 function endgame(){
 	repeat = false
 	game_status = false; 
-	io.sockets.emit('end');
+  io.sockets.emit('end');
   p_ready = []; 
-  if(round === 5){
+  if(round === 1){
     round = 0;
-    io.sockets.emit('results');
+    results.push(p_solved);
+    //console.log(results);
+    io.sockets.emit('results', results);
+    results = [];
   }
 }

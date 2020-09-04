@@ -3,6 +3,7 @@ let op_token = 0;
 let op_sign= "";
 let btn_tab = [];
 const time = 120;
+let found_token = false;
 
 function nb_button(btn){
     const pressed = game_tab[btn-1];
@@ -27,7 +28,9 @@ function nb_button(btn){
         if(ans == find_nb){
             let chrono = time -document.getElementById('timer').innerHTML;
             let sol = document.getElementById('write_op').innerHTML;
-            socket.emit('found', {name: name, sol : sol, chrono: chrono});        
+            let round = document.getElementById('n_round').innerHTML;
+            socket.emit('found', {name: name, sol : sol, chrono: chrono, round : round});
+            found_token = true;        
         }
     }
 }

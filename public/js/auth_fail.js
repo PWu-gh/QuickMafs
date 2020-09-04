@@ -25,9 +25,9 @@ if(param != null){
 
 $('input[type="text"]').keydown(function(e){
 	//not include in  48-90 96-105    0-Z   numpad0-numpad 9 
-	if(!((e.keyCode >= 48 && e.keyCode <= 90) || (e.keyCode >= 96 && e.keyCode <= 105))){
+	let keyC = [13,8,46,37,38,39,40, 109] //Enter back suppr arrows
+	if(!((e.keyCode >= 48 && e.keyCode <= 90) || (e.keyCode >= 96 && e.keyCode <= 105) || keyC.includes(e.keyCode))){
 		e.preventDefault();
 		document.getElementById('repick').innerHTML = " Only alphanumeric char!"
 	}
-
 });

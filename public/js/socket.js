@@ -54,7 +54,8 @@ socket.on("start", data =>{// object {game_tab , find_nb}
   document.getElementById("n_round").innerHTML = data.round;
   g_display(game_tab, 5);
   reset_display();
-  hideall(5); 
+  hideall(5);
+  found_token = false; 
 })
 
 socket.on('ready_check', name => {
@@ -67,6 +68,15 @@ socket.on('ready_check', name => {
 
 socket.on('count', data =>{
   document.getElementById('timer').innerHTML = data;
+  console.log(data);
+  if(data == 0){
+    if(found_token == false){
+      console.log("ff")
+      let sol = document.getElementById('write_op').innerHTML;
+      let round = document.getElementById('n_round').innerHTML;
+      socket.emit('unfound', {name: name, sol : sol, chrono: 150, round : round});
+    }
+  }
 })
 
 socket.on('started', ()=> {
@@ -85,6 +95,12 @@ socket.on('end', ()=> {
   show.forEach(e => {
     document.getElementById("c"+e).style.visibility = "visible";
   })
+})
+
+socket.on('results', data => {
+  document.getElementById('modal_t').innerText = data;
+  console.log(data)
+  display_modal();
 })
 
 msgForm.addEventListener('submit', e => {
