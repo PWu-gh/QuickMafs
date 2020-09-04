@@ -82,7 +82,7 @@ io.on('connection', socket => {
       round++;
       game_status = true;
       game_tab = roll();
-      find_nb = nb_find(10,70);
+      find_nb = nb_find(10,10);
       results.push(p_solved);
       p_solved = [];
       io.sockets.emit('start', {game_tab : game_tab, find_nb : find_nb, round : round})
@@ -150,7 +150,7 @@ function endgame(){
 	game_status = false; 
   io.sockets.emit('end');
   p_ready = []; 
-  if(round === 1){
+  if(round === 5){
     round = 0;
     results.push(p_solved);
     //console.log(results);

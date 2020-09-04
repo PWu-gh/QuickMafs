@@ -68,7 +68,6 @@ socket.on('ready_check', name => {
 
 socket.on('count', data =>{
   document.getElementById('timer').innerHTML = data;
-  console.log(data);
   if(data == 0){
     if(found_token == false){
       console.log("ff")
