@@ -173,7 +173,6 @@ function upd_score(name, time){
   }
 }
 
-let test = [ { name: 'gfdgdf', score: 14 }, { name: 'nnnnn', score: 7 } ];
 // sort array of obj by score
 function sort_obj_score(arr_of_obj){
   arr_of_obj.sort((a, b) => {

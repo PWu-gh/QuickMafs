@@ -56,6 +56,7 @@ socket.on("start", data =>{// object {game_tab , find_nb}
   reset_display();
   hideall(5);
   found_token = false; 
+  btn_disa(5, false);
 })
 
 socket.on('ready_check', name => {
@@ -98,9 +99,8 @@ socket.on('results', data => {// name score
   let string = "Score";
   document.getElementById("find_s").innerHTML = "";
   document.getElementById('nums').innerHTML =  "";
-  document.getElementById('n_p').innerHTML =  "";
+  document.getElementById('n_p').innerHTML =  data[0].name+" is the Big Shaq";
   data.forEach(e => {
-    console.log(e)
     let str = "<li>"+e.score+" 🡄 "+e.name+"</li>"
     string = string.concat(' ', str);
   })

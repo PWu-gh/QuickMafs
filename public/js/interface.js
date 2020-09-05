@@ -30,7 +30,8 @@ function nb_button(btn){
             let sol = document.getElementById('write_op').innerHTML;
             let round = document.getElementById('n_round').innerHTML;
             socket.emit('found', {name: name, sol : sol, chrono: chrono});
-            found_token = true;        
+            found_token = true;
+            btn_disa(5, true);        
         }
     }
 }
@@ -130,45 +131,46 @@ let opkey = ["ArrowUp", "ArrowLeft", "ArrowDown", "ArrowRight"];
 
 
 function checkKeyPress(key){
-    key.preventDefault();// disable arrow page scrolling
-    switch(key.code){
-        case nkey[0]:
-            nb_button(1);
-            break;
-        case nkey[1]:
-            nb_button(2);
-            break;
-        case nkey[2]:
-            nb_button(3);
-            break;
-        case nkey[3]:
-            nb_button(4);
-            break;
-        case nkey[4]:
-            nb_button(5);
-            break;
-        case "ArrowUp":
-            op_button('-');
-            break;
-        case "ArrowLeft":
-            op_button('+');
-            break;        
-        case "ArrowDown":
-            op_button('*');
-            break;
-        case "ArrowRight":
-            op_button('/');
-            break;
-        case "Backspace":
-            cancel_bt();
-            break;
-        case "Numpad0":
-            g_reset();
-            break;
-        default:
-            console.log('noting');
-    }
-    
+    if(disabled == false){
+        key.preventDefault();// disable arrow page scrolling
+        switch(key.code){
+            case nkey[0]:
+                nb_button(1);
+                break;
+            case nkey[1]:
+                nb_button(2);
+                break;
+            case nkey[2]:
+                nb_button(3);
+                break;
+            case nkey[3]:
+                nb_button(4);
+                break;
+            case nkey[4]:
+                nb_button(5);
+                break;
+            case "ArrowUp":
+                op_button('-');
+                break;
+            case "ArrowLeft":
+                op_button('+');
+                break;        
+            case "ArrowDown":
+                op_button('*');
+                break;
+            case "ArrowRight":
+                op_button('/');
+                break;
+            case "Backspace":
+                cancel_bt();
+                break;
+            case "Numpad0":
+                g_reset();
+                break;
+            default:
+                console.log('nothing');
+        }
+    } 
 }
 
 function rm_event(){
@@ -183,3 +185,18 @@ document.addEventListener("click", e => {
         window.addEventListener("keydown", checkKeyPress);
     }
 })
+
+let disabled = false;
+function btn_disa(n, tf){ // nb of numbers
+    for(let i = 1 ; i <=n; i++){
+        document.getElementById('n'+i).disabled = tf;
+    }
+    for(let i = 1 ; i <= 4; i++){
+        document.getElementById('op'+i).disabled = tf;
+    }
+    document.getElementById('can').disabled = tf;
+    document.getElementById('res').disabled = tf;
+    disabled = tf;    
+}
+
+
