@@ -70,10 +70,8 @@ socket.on('count', data =>{
   document.getElementById('timer').innerHTML = data;
   if(data == 0){
     if(found_token == false){
-      console.log("ff")
       let sol = document.getElementById('write_op').innerHTML;
-      let round = document.getElementById('n_round').innerHTML;
-      socket.emit('unfound', {name: name, sol : sol, chrono: 150, round : round});
+      socket.emit('unfound', {name: name, sol : sol, chrono: 150});
     }
   }
 })
@@ -96,9 +94,18 @@ socket.on('end', ()=> {
   })
 })
 
-socket.on('results', data => {
-  document.getElementById('modal_t').innerText = data;
-  console.log(data)
+socket.on('results', data => {// name score
+  let string = "Score";
+  document.getElementById("find_s").innerHTML = "";
+  document.getElementById('nums').innerHTML =  "";
+  document.getElementById('n_p').innerHTML =  "";
+  data.forEach(e => {
+    console.log(e)
+    let str = "<li>"+e.score+" 🡄 "+e.name+"</li>"
+    string = string.concat(' ', str);
+  })
+
+  document.getElementById('modal_t').innerHTML = string;
   display_modal();
 })
 

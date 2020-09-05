@@ -29,7 +29,7 @@ function nb_button(btn){
             let chrono = time -document.getElementById('timer').innerHTML;
             let sol = document.getElementById('write_op').innerHTML;
             let round = document.getElementById('n_round').innerHTML;
-            socket.emit('found', {name: name, sol : sol, chrono: chrono, round : round});
+            socket.emit('found', {name: name, sol : sol, chrono: chrono});
             found_token = true;        
         }
     }

@@ -63,15 +63,16 @@ io.on('connection', socket => {
 
   socket.on('found', data => {
     p_solved.push(data);
+    upd_score(data.name, data.chrono);
     io.sockets.emit('user-found', {name :users[socket.id], chrono : data.chrono});
     if(p_solved.length == Object.values(users).length){
       repeat = false;// countd
     }
   });
 
-  socket.on('unfound', data => {
-    p_solved.push(data);
-    console.log(p_solved);
+  socket.on('unfound', data => { // name sol chrono
+    p_solved.push(data);//used for op board
+    upd_score(data.name, data.chrono);
   })
 
   socket.on('ready', ()=>{
@@ -82,8 +83,7 @@ io.on('connection', socket => {
       round++;
       game_status = true;
       game_tab = roll();
-      find_nb = nb_find(10,10);
-      results.push(p_solved);
+      find_nb = nb_find(10,60);
       p_solved = [];
       io.sockets.emit('start', {game_tab : game_tab, find_nb : find_nb, round : round})
       countd(120);
@@ -150,11 +150,33 @@ function endgame(){
 	game_status = false; 
   io.sockets.emit('end');
   p_ready = []; 
-  if(round === 5){
+  if(round === 2){
     round = 0;
-    results.push(p_solved);
     //console.log(results);
+    sort_obj_score(results);
     io.sockets.emit('results', results);
     results = [];
   }
+}
+
+
+function upd_score(name, time){
+  let verify = false;
+  results.forEach(e => {
+    if(e.name == name){
+      e.score += time;
+      verify = true;
+    }
+  })  
+  if(verify == false){
+    results.push({name : name, score : time });
+  }
+}
+
+let test = [ { name: 'gfdgdf', score: 14 }, { name: 'nnnnn', score: 7 } ];
+// sort array of obj by score
+function sort_obj_score(arr_of_obj){
+  arr_of_obj.sort((a, b) => {
+    return a.score - b.score;
+  })
 }
