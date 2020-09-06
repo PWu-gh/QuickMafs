@@ -92,7 +92,7 @@ body {
 .bot-left { 
   position: absolute;
   bottom: 20px;
-  left: 30%;
+  left: 25%;
   color:rgb(240, 238, 238);
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
@@ -259,4 +259,33 @@ body {
   height: 250px;
   width: 80%;
   font-size: 150%;
+}
+
+.button {
+  display: inline-block;
+  padding: 5px 9px;
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #a5a8a5;
+  border: none;
+  min-width: 40px;
+  border-radius: 15px;
+  box-shadow: 0 9px rgb(83, 83, 83);
+}
+
+.button:hover {background-color: #7a7e7a}
+
+.button:active {
+  background-color: #7a7e7a;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+td {
+  width: 0px;
+  height: 55px;
+  padding: 3px;
 }
