@@ -20,8 +20,6 @@ app.get('/game', (req, res) => {
 console.log("Starting Quickmafs on port: " + port);
 
 //socket.io - online actions
-
-const MAX_PLAYER = 5;
 let game_status;
 let p_ready = [];
 let p_solved = [];
