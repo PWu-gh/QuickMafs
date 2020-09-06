@@ -11,9 +11,11 @@ function nb_button(btn){
         if(nb_token == 0){
             nb_token = 1;
             btn_tab.push(btn);
+            document.getElementById('commands').innerHTML = document.getElementById('n'+btn).innerHTML;
         }
         if(nb_token == 1 && pressed != null){  // change 1st number
             btn_tab[0] = btn;
+            document.getElementById('commands').innerHTML = document.getElementById('n'+btn).innerHTML;
         }    
     }
     else{
@@ -23,6 +25,7 @@ function nb_button(btn){
             ans = compute(game_tab[btn_tab[0]-1], game_tab[btn_tab[1]-1], op_sign);
             write("write_op"," ✏ &nbsp;&nbsp;"+game_tab[btn_tab[0]-1]+" "+ sign_x(op_sign)+" " +game_tab[btn_tab[1]-1]+ "&nbsp;=&nbsp;"+ ans)
             update_numbers(btn_tab[0], btn_tab[1], ans);
+            document.getElementById('commands').innerHTML = "&nbsp;";  
         }
         //solution found !
         if(ans == find_nb){
@@ -31,7 +34,8 @@ function nb_button(btn){
             let round = document.getElementById('n_round').innerHTML;
             socket.emit('found', {name: name, sol : sol, chrono: chrono});
             found_token = true;
-            btn_disa(5, true);        
+            btn_disa(5, true);
+                   
         }
     }
 }
@@ -42,12 +46,14 @@ function op_button(btn){
         op_token = 1;
         op_sign = btn;
         nb_token = 0;
+        document.getElementById('commands').innerHTML = document.getElementById('n'+btn_tab).innerHTML +" "+ sign_x(btn);
     }
     else if(nb_token == 0 && op_token ==1){
         op_sign = btn;
+        document.getElementById('commands').innerHTML = document.getElementById('n'+btn_tab).innerHTML +" "+ sign_x(btn);
     }                                     
     else{
-        console.log("please pick a number first");
+        document.getElementById('commands').innerHTML = "Pick a number !";
     }
 }
 
@@ -89,11 +95,12 @@ function g_reset(){
     nb_token = 0;
     btn_tab = [];
     document.getElementById("write_op").innerHTML = "";
-
+    document.getElementById('commands').innerHTML = "&nbsp;"; 
     console.log("game reseted");
 }
 
 function cancel_bt(){
+    document.getElementById('commands').innerHTML = "&nbsp;"; 
     if(op_token == 1){// repick nb
         op_token = 0;
         nb_token = 0;
@@ -198,5 +205,6 @@ function btn_disa(n, tf){ // nb of numbers
     document.getElementById('res').disabled = tf;
     disabled = tf;    
 }
-
-
+function ref_com(){
+    document.getElementById('commands').innerHTML = document.getElementById('n'+btn_tab).innerHTML;
+}

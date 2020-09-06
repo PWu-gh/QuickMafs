@@ -83,7 +83,7 @@ io.on('connection', socket => {
       round++;
       game_status = true;
       game_tab = roll();
-      find_nb = nb_find(10,60);
+      find_nb = nb_find(10,66);
       p_solved = [];
       io.sockets.emit('start', {game_tab : game_tab, find_nb : find_nb, round : round})
       countd(120);
@@ -103,10 +103,8 @@ io.on('connection', socket => {
 
 
 // Server generate the numbers and send to players
-let n_tab = [5];
-let dice = [5];
-// let n_tab = [1,2,3,4,5,6,7,8,9];
-// let dice = [1,2,3,4,5,6];
+let n_tab = [1,2,3,4,5,6,7,8,9];
+let dice = [1,2,3,4,5,6];
 let pair_tab = [2,4,6,8];
 let odd_tab = [1,3,5,7,9];
 

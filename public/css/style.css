@@ -289,3 +289,23 @@ td {
   height: 55px;
   padding: 3px;
 }
+
+.c_time{
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #a5a8a5;
+  min-width: 80px;
+  border-radius: 15px;
+  left: 30%;
+  right: 30%;
+  box-shadow: 0 3px rgb(83, 83, 83);
+}
+
+#commands{
+  border: 1px solid #000;
+  font-size: x-large;
+  background-color: rgb(146, 121, 67);
+}
