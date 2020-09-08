@@ -31,6 +31,7 @@ socket.on('user-connected', data => {
   //Object.keys(users).length
     appendMessage('<strong> 🠞 &nbsp;'+data.name+'</strong> joined the room.');
     display_name(Object.values(data.users));
+    p_sound(bushin);
 
 })
 
@@ -39,10 +40,13 @@ socket.on('user-disconnected', data => {
     appendMessage('<strong> 🠜 &nbsp;'+data.name+ '</strong> left the room.');
   }
   display_name(Object.values(data.users));
+  p_sound(duck);
 }) 
 
 socket.on('user-found',data => {
   update_player(data);
+  p_sound(ding);
+  
 })
 
 socket.on("start", data =>{// object {game_tab , find_nb}
@@ -57,6 +61,7 @@ socket.on("start", data =>{// object {game_tab , find_nb}
   hideall(5);
   found_token = false; 
   btn_disa(5, false);
+  p_sound(gong);
 })
 
 socket.on('ready_check', name => {
@@ -93,7 +98,7 @@ socket.on('end', ()=> {
   show.forEach(e => {
     document.getElementById("c"+e).style.visibility = "visible";
   })
-  p_sound(duck);
+  p_sound(gong);
 })
 
 socket.on('results', data => {// name score
@@ -197,8 +202,14 @@ function url_get(param) {
 //sound
 let kb = new Audio("/sound/kb.mp3");
 kb.volume = 0.5;
-let duck = new Audio("/sound/duck.wav");
-duck.volume = 0.8;
+let duck = new Audio("/sound/duck.mp3");
+duck.volume = 0.5;
+let bushin = new Audio("/sound/bushin.mp3");
+bushin.volume = 0.3;
+let gong = new Audio("/sound/gong.mp3");
+gong.volume = 0.5;
+let ding = new Audio("/sound/ding.mp3");
+ding.volume = 0.5;
 
 function p_sound(snd){
   snd.currentTime = 0;
