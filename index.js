@@ -146,7 +146,7 @@ function endgame(){
 	game_status = false; 
   io.sockets.emit('end');
   p_ready = []; 
-  if(round === 2){
+  if(round === 5){
     round = 0;
     //console.log(results);
     sort_obj_score(results);
