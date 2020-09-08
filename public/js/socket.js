@@ -32,7 +32,6 @@ socket.on('user-connected', data => {
     appendMessage('<strong> 🠞 &nbsp;'+data.name+'</strong> joined the room.');
     display_name(Object.values(data.users));
     p_sound(ding);
-
 })
 
 socket.on('user-disconnected', data => {
