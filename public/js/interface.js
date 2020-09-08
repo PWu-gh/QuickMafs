@@ -157,10 +157,10 @@ function checkKeyPress(key){
                 nb_button(5);
                 break;
             case "ArrowUp":
-                op_button('-');
+                op_button('+');
                 break;
             case "ArrowLeft":
-                op_button('+');
+                op_button('-');
                 break;        
             case "ArrowDown":
                 op_button('*');
