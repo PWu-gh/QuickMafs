@@ -93,6 +93,7 @@ socket.on('end', ()=> {
   show.forEach(e => {
     document.getElementById("c"+e).style.visibility = "visible";
   })
+  p_sound(duck);
 })
 
 socket.on('results', data => {// name score
@@ -191,4 +192,15 @@ function url_get(param) {
 		return vars[param] ? vars[param] : null;	
 	}
 	return vars;
+}
+
+//sound
+let kb = new Audio("/sound/kb.mp3");
+kb.volume = 0.5;
+let duck = new Audio("/sound/duck.wav");
+duck.volume = 0.8;
+
+function p_sound(snd){
+  snd.currentTime = 0;
+  snd.play();
 }

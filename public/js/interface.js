@@ -7,6 +7,7 @@ let found_token = false;
 
 function nb_button(btn){
     const pressed = game_tab[btn-1];
+    p_sound(kb);
     if(op_token == 0 && pressed != null){
         if(nb_token == 0){
             nb_token = 1;
@@ -41,6 +42,7 @@ function nb_button(btn){
 }
 
 function op_button(btn){
+    p_sound(kb);
     if(nb_token == 1 && op_token ==0){
         // if(btn == '+' || btn == '-' || btn == '*' || btn == '/')
         op_token = 1;
@@ -88,6 +90,7 @@ function compute(tab1, tab2, op){
 }
 
 function g_reset(){
+    p_sound(kb);
     game_tab = [...game_reset];
     g_display(game_tab, 5);
     all_moves = [[...game_tab]];
@@ -100,6 +103,7 @@ function g_reset(){
 }
 
 function cancel_bt(){
+    p_sound(kb);
     document.getElementById('commands').innerHTML = "&nbsp;"; 
     if(op_token == 1){// repick nb
         op_token = 0;
