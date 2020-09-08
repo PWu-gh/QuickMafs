@@ -31,7 +31,7 @@ socket.on('user-connected', data => {
   //Object.keys(users).length
     appendMessage('<strong> 🠞 &nbsp;'+data.name+'</strong> joined the room.');
     display_name(Object.values(data.users));
-    p_sound(bushin);
+    p_sound(,ding);
 
 })
 
@@ -204,8 +204,6 @@ let kb = new Audio("/sound/kb.mp3");
 kb.volume = 0.5;
 let duck = new Audio("/sound/duck.mp3");
 duck.volume = 0.5;
-let bushin = new Audio("/sound/bushin.mp3");
-bushin.volume = 0.3;
 let gong = new Audio("/sound/gong.mp3");
 gong.volume = 0.5;
 let ding = new Audio("/sound/ding.mp3");
