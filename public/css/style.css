@@ -309,3 +309,7 @@ td {
   font-size: x-large;
   background-color: rgb(146, 121, 67);
 }
+
+.ntab {
+  padding: 5px;
+}
