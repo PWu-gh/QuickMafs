@@ -124,6 +124,7 @@ msgForm.addEventListener('submit', e => {
 
 function appendMessage(message) {
   $('#display_chat').append('<div>'+ message + '</div>');
+  $('#display_chat')[0].scrollTop = $('#display_chat')[0].scrollHeight;
 }
 
 //this function takes a tab 

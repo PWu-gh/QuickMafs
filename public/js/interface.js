@@ -212,3 +212,5 @@ function btn_disa(n, tf){ // nb of numbers
 function ref_com(){
     document.getElementById('commands').innerHTML = document.getElementById('n'+btn_tab).innerHTML;
 }
+
+
