@@ -121,6 +121,7 @@ msgForm.addEventListener('submit', e => {
   appendMessage('<strong>You :</strong> '+message);
   socket.emit('broad_msg', message);
   msgInput.value = '';
+  window.removeEventListener("keydown", checkKeyPress);
 })
 
 function appendMessage(message) {

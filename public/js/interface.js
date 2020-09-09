@@ -145,6 +145,9 @@ function checkKeyPress(key){
     if(disabled == false){
         key.preventDefault();// disable arrow page scrolling
         switch(key.code){
+            case "Enter":
+                document.getElementById("message").focus();
+                window.removeEventListener("keydown", checkKeyPress);
             case nkey[0]:
                 nb_button(1);
                 break;
@@ -184,13 +187,10 @@ function checkKeyPress(key){
     } 
 }
 
-function rm_event(){
-    window.removeEventListener("keydown", checkKeyPress);
-}
 
 document.addEventListener("click", e => {
     if(e.target.id == "message"){
-        rm_event();
+        window.removeEventListener("keydown", checkKeyPress);
     }
     else{
         window.addEventListener("keydown", checkKeyPress);

@@ -91,10 +91,10 @@ body {
 }
 
 /* bot right text */
-.bot-left { 
+.bot{ 
   position: absolute;
   bottom: 20px;
-  left: 6%;
+  width: 100%;
   color:rgb(240, 238, 238);
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
@@ -268,7 +268,7 @@ body {
 
 .button {
   display: inline-block;
-  padding: 5px 9px;
+  padding: 3px 5px;
   font-size: 20px;
   cursor: pointer;
   text-decoration: none;
@@ -276,8 +276,8 @@ body {
   color: #fff;
   background-color: #a5a8a5;
   border: none;
-  min-width: 40px;
-  border-radius: 15px;
+  min-width: 38px;
+  border-radius: 5px;
   box-shadow: 0 6px rgb(83, 83, 83);
 }
 
@@ -303,7 +303,7 @@ td {
   color: #fff;
   background-color: #a5a8a5;
   min-width: 80px;
-  border-radius: 15px;
+  border-radius: 5px;
   left: 30%;
   right: 30%;
   box-shadow: 0 3px rgb(83, 83, 83);
@@ -318,3 +318,4 @@ td {
 .ntab {
   padding: 5px;
 }
+
