@@ -56,6 +56,7 @@ socket.on("start", data =>{// object {game_tab , find_nb}
   document.getElementById("find").innerHTML = find_nb;
   document.getElementById("n_round").innerHTML = data.round;
   g_display(game_tab, 5);
+  s_display(game_tab, 5);
   reset_display();
   hideall(5);
   found_token = false; 

@@ -7,6 +7,11 @@ let all_moves = [];
 function g_display(game_tab, nb_dice){
     for(let i = 0; i<nb_dice; i++){
         document.getElementById("n"+(i+1)).innerHTML = game_tab[i];
+    }
+}
+
+function s_display(game_tab, nb_dice){
+    for(let i = 0; i<nb_dice; i++){
         document.getElementById("s"+(i+1)).innerHTML = game_tab[i];
     }
 }
