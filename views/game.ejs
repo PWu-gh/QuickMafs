@@ -10,7 +10,7 @@
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body class="font_merri">
+<body class="font_merri" style="padding-left: 10px;">
 <div class="container">
     <div id="header" class="row align-items-center">
         <img id="logo" src="/img/Logo.png" onclick="window.location.href='/'" alt="QuickMafs" style="cursor: pointer;">
@@ -53,7 +53,7 @@
     </div>
     <div class="container row padding-0" id="game">
 
-            <div class="col-8 padding-0">
+            <div class="col-md-8 padding-0">
                 <div class="container " id="board">
                     
                     <div class="top-left">
@@ -82,7 +82,7 @@
 
                     </div>
                     <div class="bot">
-                    <div style="margin: 0 auto; width: 60%"> 
+                    <div style="margin: 0 auto; width: 50%"> 
                         <span class="custom_font" style="font-size:x-large;">Commands : </span>
                         <span id="commands"> &nbsp;</span>
                         <table>
@@ -100,16 +100,21 @@
                                 <td>    <button class="button" id="op2" onclick="op_button('-')">-</button>  </td>
                                 <td>    <button class="button" id="op3" onclick="op_button('*')">&times;</button>   </td>
                                 <td>    <button class="button" id="op4" onclick="op_button('/')">/</button>   </td>
-                                <td>    <button class="button" id="can" onclick="cancel_bt()">cancel</button></td>
-                                <td>    <button class="button" id="res" onclick="g_reset()">reset</button></td>
                             </tr>
                         </table> 
+                        <div  style="padding-left: 80px;">
+                            <table>    
+                                <td>    <button class="button" id="can" onclick="cancel_bt()">cancel</button></td>
+                                <td>    <button class="button" id="res" onclick="g_reset()">reset</button></td>
+                            </table>
+                        </div>
+ 
                     </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-4 padding-0" id="chat">
+            <div class="col-md-4 padding-0" id="chat">
                 <div class="container" id="chat_display">
                     <h3 class="custom_font" style="color: black;">Chat</h3>
                     <section id="display_chat">   

@@ -7,7 +7,7 @@ body {
 }
 #logo {
   max-width: 400px;
-  width: auto;
+  width: 80%;
 }
 
 .padding-0{
@@ -94,7 +94,7 @@ body {
 .bot{ 
   position: absolute;
   bottom: 20px;
-  width: 100%;
+  width: 96%;
   color:rgb(240, 238, 238);
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
