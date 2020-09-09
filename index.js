@@ -96,13 +96,12 @@ io.on('connection', socket => {
       }
     });
   });
-
 });
 
 
 // Server generate the numbers and send to players
 let n_tab = [1,2,3,4,5,6,7,8,9];
-let dice = [1,2,3,4,5,6];
+let dice = [2,3,4,5,6];
 let pair_tab = [2,4,6,8];
 let odd_tab = [1,3,5,7,9];
 
