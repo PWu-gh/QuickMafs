@@ -113,7 +113,7 @@ function cancel_bt(){
     else{// if op_token == 0
         if(all_moves.length > 1){
             all_moves.pop();
-            game_tab = all_moves[all_moves.length-1];
+            game_tab = [...all_moves[all_moves.length-1]];
             g_display(game_tab, 5);
             unwrite("write_op");
         }
