@@ -6,8 +6,8 @@ body {
     background-size: cover;
 }
 #logo {
-  width: 400px;
-  height: 100%;
+  max-width: 400px;
+  width: auto;
 }
 
 .padding-0{
@@ -34,6 +34,7 @@ body {
   margin-bottom: 5px;
   border: 1px solid black ;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  font-family: "Shrikhand";
 }
 
 
@@ -83,8 +84,8 @@ body {
 /* Top left text */
 .top-left {
   position: absolute;
-  top: 20px;
-  left: 40px;
+  top: 8%;
+  left: 4%;
   color:rgb(240, 238, 238);
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
@@ -93,7 +94,7 @@ body {
 .bot-left { 
   position: absolute;
   bottom: 20px;
-  left: 25%;
+  left: 6%;
   color:rgb(240, 238, 238);
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
@@ -101,8 +102,8 @@ body {
 /* top right text */
 .top-right { 
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 4%;
+  right: 4%;
   color:rgb(240, 238, 238);
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
@@ -128,6 +129,9 @@ body {
 #round{
   text-align: center;
   padding-top: 5px;
+  font-size:90%;
+  width: 100%;
+  overflow: hidden;
 }
 
 @font-face {
@@ -274,7 +278,7 @@ body {
   border: none;
   min-width: 40px;
   border-radius: 15px;
-  box-shadow: 0 9px rgb(83, 83, 83);
+  box-shadow: 0 6px rgb(83, 83, 83);
 }
 
 .button:hover {background-color: #7a7e7a}
