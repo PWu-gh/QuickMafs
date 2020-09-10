@@ -23,10 +23,8 @@
             <span id="timer">120</span>
         </div>
         <div class="col-1 separator" id="round">
-            <strong>
-                <div>Round</div>
-                <span id="n_round">x</span><span>/5</span>
-            </strong>
+            <div><strong>Round</strong></div>
+            <strong><span id="n_round">x</span><span>/5</span></strong>
         </div>
         <div class="col-2 separator">
             <div><strong id="p1">Player</strong></div>
@@ -63,22 +61,25 @@
 
                     <div class="top-right">
                         
-                        <h3 class="custom_font"  style="font-size:x-large;">
+                        <div class="custom_font"  style="font-size:x-large;">
                             <div>Find : <span id="find" style="color: aliceblue;">?</span></div>
                             <div>Numbers :</div>
                             <div style="color: aliceblue;">
                                 <div id="n_info">
-                                    <tr>
-                                        <td>    <span class="ntab" id="s1">?</span>   </td>
-                                        <td>    <span class="ntab" id="s2">?</span>  </td>
-                                        <td>    <span class="ntab" id="s3">?</span>   </td>
-                                        <td>    <span class="ntab" id="s4">?</span>   </td>
-                                        <td>    <span class="ntab" id="s5">?</span>  </td>
-                                    </tr>             
+                                    <table>
+                                        <tr>
+                                            <td>    <span class="ntab" id="s1">?</span>   </td>
+                                            <td>    <span class="ntab" id="s2">?</span>  </td>
+                                            <td>    <span class="ntab" id="s3">?</span>   </td>
+                                            <td>    <span class="ntab" id="s4">?</span>   </td>
+                                            <td>    <span class="ntab" id="s5">?</span>  </td>
+                                        </tr>   
+                                    </table>
+         
                                 </div> 
                             </div>
                                
-                        </h3>
+                        </div>
 
                     </div>
                     <div class="bot">
@@ -103,9 +104,12 @@
                             </tr>
                         </table> 
                         <div  style="padding-left: 80px;">
-                            <table>    
-                                <td>    <button class="button" id="can" onclick="cancel_bt()">cancel</button></td>
-                                <td>    <button class="button" id="res" onclick="g_reset()">reset</button></td>
+                            <table>
+                                <tr>
+                                    <td>    <button class="button" id="can" onclick="cancel_bt()">cancel</button></td>
+                                    <td>    <button class="button" id="res" onclick="g_reset()">reset</button></td>
+                                </tr>    
+
                             </table>
                         </div>
  
@@ -128,8 +132,8 @@
             
                 
             </div>
-            
-    </div><!-- game container -->
+    </div>
+</div><!-- game container -->
 
 
 <!-- The Modal -->

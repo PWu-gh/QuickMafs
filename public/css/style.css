@@ -102,7 +102,7 @@ body {
 /* top right text */
 .top-right { 
   position: absolute;
-  top: 4%;
+  top: 3%;
   right: 4%;
   color:rgb(240, 238, 238);
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
