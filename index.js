@@ -100,7 +100,7 @@ io.on('connection', socket => {
       find_nb = nb_find(10,77);
       p_solved = [];
       io.sockets.emit('start', {game_tab : game_tab, find_nb : find_nb, round : round})
-      countd(120);
+      countd(100);
     }
   });
 

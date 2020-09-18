@@ -2,7 +2,7 @@ let nb_token = 0;
 let op_token = 0;
 let op_sign= "";
 let btn_tab = [];
-const time = 120;
+const time = 100;
 let found_token = false;
 
 function nb_button(btn){
