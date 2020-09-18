@@ -57,6 +57,22 @@ io.on('connection', socket => {
     delete users[socket.id]
     p_ready.pop(player);
     socket.broadcast.emit('user-disconnected', {users : users , name : player});
+    if(Object.keys(users).length == 0){
+      round = 0;
+      repeat = false;
+    }
+    //pop solved and before out
+    for(let i = 0; i < p_solved.length; i++){
+      if(p_solved[i].name == player){
+        p_solved.pop(p_solved[i])
+      }
+      if(p_solved.length == Object.values(users).length){
+        repeat = false;// countd
+      }
+      break;
+    }
+    
+    
   });
 
   socket.on('found', data => {
@@ -81,7 +97,7 @@ io.on('connection', socket => {
       round++;
       game_status = true;
       game_tab = roll();
-      find_nb = nb_find(10,66);
+      find_nb = nb_find(10,77);
       p_solved = [];
       io.sockets.emit('start', {game_tab : game_tab, find_nb : find_nb, round : round})
       countd(120);
@@ -98,6 +114,9 @@ io.on('connection', socket => {
   });
 });
 
+
+// let n_tab = [5];
+// let dice = [5];
 
 // Server generate the numbers and send to players
 let n_tab = [1,2,3,4,5,6,7,8,9];
