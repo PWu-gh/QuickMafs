@@ -8,3 +8,5 @@ Quick maths app online with socket.io
 Modules to include : http socket.io express ejs
 
 Status: done
+
+Todo: Gen nb_find with gen nb
