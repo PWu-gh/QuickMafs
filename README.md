@@ -8,3 +8,5 @@ Quick maths app online with socket.io
 Modules to include : http socket.io express ejs
 
 Status: done
+
+Demo: https://www.youtube.com/watch?v=3lBYJQ3lHGE
