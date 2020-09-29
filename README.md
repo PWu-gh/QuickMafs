@@ -10,3 +10,6 @@ Modules to include : http socket.io express ejs
 Status: done
 
 Demo: https://www.youtube.com/watch?v=3lBYJQ3lHGE
+
+
+Todo: Gen nb_find with gen nb
