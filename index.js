@@ -120,9 +120,9 @@ io.on('connection', socket => {
 
 // Server generate the numbers and send to players
 let n_tab = [1,2,3,4,5,6,7,8,9];
-let dice = [2,3,4,5,6];
+let dice = [3,4,5,6];
 let pair_tab = [2,4,6,8];
-let odd_tab = [1,3,5,7,9];
+let odd_tab = [3,5,7,9];
 
 //take a random number from the array
 function rand_array(array) {
@@ -166,10 +166,14 @@ function endgame(){
   p_ready = []; 
   if(round === 5){
     round = 0;
-    //console.log(results);
-    sort_obj_score(results);
-    io.sockets.emit('results', results);
-    results = [];
+    setTimeout(function (){  //wait 1s for unfound
+      //console.log(results);
+      sort_obj_score(results);
+      io.sockets.emit('results', results);
+      results = [];
+    
+    }, 1000);
+   
   }
 }
 

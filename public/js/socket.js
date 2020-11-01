@@ -89,7 +89,7 @@ socket.on('started', ()=> {
 socket.on('ans_op', data => {
   document.getElementById('modal_t').innerHTML = data;
   document.getElementById("find_s").innerHTML = find_nb;
-  document.getElementById('nums').innerHTML =  document.getElementById('n_info').innerHTML
+  document.getElementById('nums').innerHTML =  document.getElementById('n_info').innerHTML;
   display_modal(); 
 })
 
@@ -203,15 +203,62 @@ function url_get(param) {
 
 //sound
 let kb = new Audio("/sound/kb.mp3");
-kb.volume = 0.5;
+kb.volume = 0.4;
 let duck = new Audio("/sound/duck.mp3");
-duck.volume = 0.5;
+duck.volume = 0.4;
 let gong = new Audio("/sound/gong.mp3");
-gong.volume = 0.5;
+gong.volume = 0.4;
 let ding = new Audio("/sound/ding.mp3");
-ding.volume = 0.5;
+ding.volume = 0.4;
 
 function p_sound(snd){
   snd.currentTime = 0;
   snd.play();
 }
+
+
+let n_tab = [1,2,3,4,5,6,7,8,9];
+let dice = [2,3,4,5,6];
+let pair_tab = [2,4,6,8];
+let odd_tab = [3,5,7,9];
+function rand_array(array) {
+  let rand = array[Math.floor(Math.random()*Math.floor(array.length))];
+  return rand;
+}
+function roll(){
+  let r1 = rand_array(n_tab);
+  let r2 = rand_array(dice);
+  let r3 = rand_array(pair_tab);
+  let r4 = rand_array(odd_tab);
+  let r5 = rand_array(dice);
+  let game_tab = [r1, r2, r3, r4, r5]
+  return game_tab;
+}
+// function roll_op(a, b, max_roll){
+//   let r = nb_find(1,max_roll+1);
+//   if(r == 1){
+//     return a+b;
+//   }
+//   if(r == 2){
+//     if(a-b > 0) return a-b;
+//     else return b-a;
+//   }
+//   if(r == 3){
+//     return a*b;
+//   }
+//   if(r == 4){
+//     if(IsGoodDivision(a,b)) return a/b;
+//     else {
+//       roll_op(a,b, 3);
+//     }
+//   }
+// }
+
+// function nb_find(nb_min,nb_max){
+//   find_nb = Math.floor(Math.random()*Math.floor(nb_max- nb_min)+nb_min);
+//   return find_nb
+// }
+
+
+
+

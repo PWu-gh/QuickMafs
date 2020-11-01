@@ -24,9 +24,20 @@ function nb_button(btn){
         if(pressed != null && btn_tab[0] != btn){
             btn_tab.push(btn); // 2nd number
             ans = compute(game_tab[btn_tab[0]-1], game_tab[btn_tab[1]-1], op_sign);
-            write("write_op"," ✏ &nbsp;&nbsp;"+game_tab[btn_tab[0]-1]+" "+ sign_x(op_sign)+" " +game_tab[btn_tab[1]-1]+ "&nbsp;=&nbsp;"+ ans)
-            update_numbers(btn_tab[0], btn_tab[1], ans);
-            document.getElementById('commands').innerHTML = "&nbsp;";  
+            if(ans == Infinity){
+                btn_tab.pop();
+                op_token = 1;
+                if(!document.getElementById('commands').innerHTML.includes('repick') ){
+                    document.getElementById('commands').innerHTML = document.getElementById('commands').innerHTML +" repick";
+                }
+                
+            }
+            else{
+                write("write_op"," ✏ &nbsp;&nbsp;"+game_tab[btn_tab[0]-1]+" "+ sign_x(op_sign)+" " +game_tab[btn_tab[1]-1]+ "&nbsp;=&nbsp;"+ ans)
+                update_numbers(btn_tab[0], btn_tab[1], ans);
+                document.getElementById('commands').innerHTML = "&nbsp;"; 
+            }
+             
         }
         //solution found !
         if(ans == find_nb){
@@ -99,7 +110,7 @@ function g_reset(){
     btn_tab = [];
     document.getElementById("write_op").innerHTML = "";
     document.getElementById('commands').innerHTML = "&nbsp;"; 
-    console.log("game reseted");
+    console.log("game reset");
 }
 
 function cancel_bt(){
@@ -213,4 +224,9 @@ function ref_com(){
     document.getElementById('commands').innerHTML = document.getElementById('n'+btn_tab).innerHTML;
 }
 
+function IsGoodDivision(a, b){ //divisable par 2^5 par divisable
+    while (b % 2 == 0) { b /= 2; }
+    while (b % 5 == 0) { b /= 5; }
+    return a % b == 0;
+}
 
