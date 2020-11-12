@@ -231,7 +231,7 @@ function IsGoodDivision(a, b){ //divisable par 2^5 par divisable
 }
 
 function nsol(){
-    if(find_token != true){
+    if(found_token != true){
         socket.emit('nosol', name);
         document.getElementById("btn_nsol").style.visibility = "hidden";
     }
