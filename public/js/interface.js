@@ -230,3 +230,8 @@ function IsGoodDivision(a, b){ //divisable par 2^5 par divisable
     return a % b == 0;
 }
 
+function nsol(){
+    socket.emit('nosol', name);
+    document.getElementById("btn_nsol").style.visibility = "hidden";
+}
+

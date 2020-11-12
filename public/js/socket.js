@@ -61,6 +61,7 @@ socket.on("start", data =>{// object {game_tab , find_nb}
   hideall(5);
   found_token = false; 
   btn_disa(5, false);
+  document.getElementById("btn_nsol").style.visibility = "visible";
   p_sound(gong);
 })
 
@@ -98,6 +99,7 @@ socket.on('end', ()=> {
   show.forEach(e => {
     document.getElementById("c"+e).style.visibility = "visible";
   })
+  document.getElementById("btn_nsol").style.visibility = "hidden";
   p_sound(gong);
 })
 

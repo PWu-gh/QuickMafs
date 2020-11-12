@@ -43,6 +43,7 @@ function ready(){
 
 function already(){
     document.getElementById("btn_rd").style.visibility = "hidden";
+    document.getElementById("btn_nsol").style.visibility = "visible";
 }
 
 function rd_again(){

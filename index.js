@@ -28,6 +28,7 @@ let game_tab = [];
 let find_nb;
 let users ={};
 let results = [];
+let nosol = [];
 
 //Object.values(users) this is a tab of all names
 //Object.keys(users).length
@@ -44,6 +45,7 @@ io.on('connection', socket => {
       if(game_status == true){
       socket.emit('start', {game_tab : game_tab, find_nb : find_nb, round : round})
       socket.emit('started');
+      nosol.push(name);
      }
     }
   });
@@ -99,6 +101,7 @@ io.on('connection', socket => {
       game_tab = roll();
       find_nb = nb_find(10,77);
       p_solved = [];
+      nosol = [...p_ready];
       io.sockets.emit('start', {game_tab : game_tab, find_nb : find_nb, round : round})
       countd(100);
     }
@@ -112,6 +115,21 @@ io.on('connection', socket => {
       }
     });
   });
+
+  socket.on('nosol', n=> {
+    nosol.pop(n);
+    let msg = "voted for No Solution.";
+    io.sockets.emit('chat-message', { message: msg, name: users[socket.id] });
+    if(nosol.length == 0){
+      round--;
+      repeat = false
+      game_status = false; 
+      io.sockets.emit('end');
+      p_ready = []; 
+    }
+
+  });
+  
 });
 
 
