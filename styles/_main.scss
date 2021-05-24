@@ -1,0 +1,82 @@
+main {
+    display: flex;
+    background-color: $sec;
+    height: 100%; // - header
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    .header {
+        width: 98%;
+        height : 120px;
+        background-color: aquamarine;
+        max-width: 1400px;
+    }
+
+    .top-bar {
+        height: 60px;
+        width: 98%;
+        max-width: 1400px;
+        background-color: beige;
+    }
+
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: 220px 1fr 320px;
+    // grid-template-columns: 220px 1fr 320px;
+    background-color: black;
+    max-height: 700px;
+    min-height: 500px;
+    width: 98%;
+    height: 100%;
+    max-width: 1400px;
+    justify-content: center;
+
+    .players {
+        background-color: rgb(70, 59, 42);
+    }
+
+    .board {
+        background-color: black;
+        // min-width: 600px;
+    }
+    
+    .chat {
+        background-color: rgb(104, 117, 117);
+    }
+}
+
+
+
+
+@media (max-width: 1200px) {
+    .game-grid {
+    display: grid;
+    grid-template-columns: 100px 1fr 1px;
+    // grid-template-columns: 220px 1fr 320px;
+    background-color: black;
+    max-height: 700px;
+    min-height: 500px;
+    width: 98%;
+    height: 100%;
+    max-width: 1400px;
+    justify-content: center;
+    
+
+        .players {
+            background-color: rgb(70, 59, 42);
+        }
+
+        .board {
+            background-color: black;
+            // min-width: 600px;
+        }
+        
+        .chat {
+            background-color: rgb(104, 117, 117);
+        }
+    }
+}

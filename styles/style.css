@@ -1,0 +1,122 @@
+html {
+  height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: grey;
+  height: 100%;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #659daf;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+main .header {
+  width: 98%;
+  height: 120px;
+  background-color: aquamarine;
+  max-width: 1400px;
+}
+
+main .top-bar {
+  height: 60px;
+  width: 98%;
+  max-width: 1400px;
+  background-color: beige;
+}
+
+.game-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 220px 1fr 320px;
+      grid-template-columns: 220px 1fr 320px;
+  background-color: black;
+  max-height: 700px;
+  min-height: 500px;
+  width: 98%;
+  height: 100%;
+  max-width: 1400px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.game-grid .players {
+  background-color: #463b2a;
+}
+
+.game-grid .board {
+  background-color: black;
+}
+
+.game-grid .chat {
+  background-color: #687575;
+}
+
+@media (max-width: 1200px) {
+  .game-grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 100px 1fr 1px;
+        grid-template-columns: 100px 1fr 1px;
+    background-color: black;
+    max-height: 700px;
+    min-height: 500px;
+    width: 98%;
+    height: 100%;
+    max-width: 1400px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .game-grid .players {
+    background-color: #463b2a;
+  }
+  .game-grid .board {
+    background-color: black;
+  }
+  .game-grid .chat {
+    background-color: #687575;
+  }
+}
+
+/* ---------------------scrollbar styling-------------------------------*/
+/* The emerging W3C standard
+   that is currently Firefox-only */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #292929 silver;
+}
+
+/* Works on Chrome/Edge/Safari */
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: silver;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #292929;
+  border-radius: 20px;
+  border: 3px solid silver;
+}
+/*# sourceMappingURL=style.css.map */
