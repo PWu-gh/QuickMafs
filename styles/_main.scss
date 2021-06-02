@@ -26,7 +26,6 @@ main {
 .game-grid {
     display: grid;
     grid-template-columns: 220px 1fr 320px;
-    // grid-template-columns: 220px 1fr 320px;
     background-color: black;
     max-height: 700px;
     min-height: 500px;
@@ -41,42 +40,11 @@ main {
 
     .board {
         background-color: black;
-        // min-width: 600px;
+        min-width: 500px;
     }
     
     .chat {
-        background-color: rgb(104, 117, 117);
+        background-color: rgb(104, 117, 115);
     }
 }
 
-
-
-
-@media (max-width: 1200px) {
-    .game-grid {
-    display: grid;
-    grid-template-columns: 100px 1fr 1px;
-    // grid-template-columns: 220px 1fr 320px;
-    background-color: black;
-    max-height: 700px;
-    min-height: 500px;
-    width: 98%;
-    height: 100%;
-    max-width: 1400px;
-    justify-content: center;
-    
-
-        .players {
-            background-color: rgb(70, 59, 42);
-        }
-
-        .board {
-            background-color: black;
-            // min-width: 600px;
-        }
-        
-        .chat {
-            background-color: rgb(104, 117, 117);
-        }
-    }
-}

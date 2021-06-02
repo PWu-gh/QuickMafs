@@ -64,37 +64,11 @@ main .top-bar {
 
 .game-grid .board {
   background-color: black;
+  min-width: 500px;
 }
 
 .game-grid .chat {
-  background-color: #687575;
-}
-
-@media (max-width: 1200px) {
-  .game-grid {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 100px 1fr 1px;
-        grid-template-columns: 100px 1fr 1px;
-    background-color: black;
-    max-height: 700px;
-    min-height: 500px;
-    width: 98%;
-    height: 100%;
-    max-width: 1400px;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .game-grid .players {
-    background-color: #463b2a;
-  }
-  .game-grid .board {
-    background-color: black;
-  }
-  .game-grid .chat {
-    background-color: #687575;
-  }
+  background-color: #687573;
 }
 
 /* ---------------------scrollbar styling-------------------------------*/
